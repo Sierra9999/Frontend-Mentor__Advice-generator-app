@@ -1,4 +1,5 @@
 import React from 'react';
+import Dice from "./Icons/icon-dice.svg"
 import './App.scss';
 
 interface Slip {
@@ -27,16 +28,16 @@ function App() {
   return (
     <div className="App App-header">
       <section className="advice-card">
-        <h4 className="advice-card__advice-id">{advice ? advice.slip.id : "ADVICE # 000"}</h4>
+        <h4 className="advice-card__advice-id">{advice ? `ADVICE #${advice.slip.id}` : "ADVICE # 000"}</h4>
 
-        <p className="advice-card__advice">{advice?.slip.advice}</p>
+        <p className="advice-card__advice">{`"${advice?.slip.advice}"`}</p>
 
         <hr />
 
         <button 
         onClick={getAdvice}
         className="advice-card__reroll-buton">
-          rollerino</button>
+          <img src={Dice} alt="" /></button>
 
       </section>
     </div>
